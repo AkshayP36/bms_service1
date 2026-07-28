@@ -92,5 +92,8 @@ SeatType: [enum]
     PREMIUM
     
 
+
+Design patterns:
+
     
 
