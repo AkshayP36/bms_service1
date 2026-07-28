@@ -24,6 +24,7 @@ public class BookingController {
         Booking booking = bookingService.bookMovieTicket(req.getUserId(), req.getShowId(), req.getSeatIds());
 
         BookMovieResponseDto bookMovieResponseDto = new BookMovieResponseDto();
+        bookMovieResponseDto.setBooking(booking);
         return bookMovieResponseDto;
     }
 

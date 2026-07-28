@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SeatType {
+public class SeatType extends BaseModel{
 
 //    PREMIUM,
 //    SILVER,

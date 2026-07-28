@@ -16,11 +16,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Payment extends BaseModel{
     @Enumerated(EnumType.ORDINAL)
-    @ElementCollection
     private PaymentMode paymentMode;
 
     @Enumerated(EnumType.ORDINAL)
-    @ElementCollection
     private PaymentStatus paymentStatus;
 
     private Double amount;
