@@ -1,7 +1,6 @@
 package com.lld.BookMyShow.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +18,9 @@ public class Screen extends BaseModel{
     private String name;
     @OneToMany
     private List<Seat> seats;
+
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> features;
 
 }

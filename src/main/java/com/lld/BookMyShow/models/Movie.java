@@ -1,6 +1,9 @@
 package com.lld.BookMyShow.models;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +23,8 @@ public class Movie extends BaseModel{
     private Long runningTime;
     private Date releaseDate;
     private Double rating;
+
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> features;
 }

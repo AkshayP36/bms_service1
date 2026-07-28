@@ -1,0 +1,17 @@
+package com.lld.BookMyShow.dtos;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class BookMovieRequestDto {
+
+    private Long userId;
+    private Long showId;
+    private List<Long> seatIds;
+}

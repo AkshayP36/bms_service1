@@ -1,9 +1,6 @@
 package com.lld.BookMyShow.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +23,9 @@ public class Booking extends BaseModel{
     private int amount;
     @OneToMany
     private List<Payment> payments;
+
     @OneToOne
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private BookingStatus bookingStatus;
 }

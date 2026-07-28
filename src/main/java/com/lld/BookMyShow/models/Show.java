@@ -1,9 +1,6 @@
 package com.lld.BookMyShow.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +20,9 @@ public class Show extends BaseModel{
     private Movie movie;
     private Date startTime;
     private Date endTime;
-//    @ManyToMany
+
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> features;
     @ManyToOne
     private Screen screen;
