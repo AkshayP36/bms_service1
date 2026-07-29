@@ -2,6 +2,9 @@ package com.lld.BookMyShow.controllers;
 
 import com.lld.BookMyShow.dtos.BookMovieRequestDto;
 import com.lld.BookMyShow.dtos.BookMovieResponseDto;
+import com.lld.BookMyShow.exceptions.SeatNotAvailableException;
+import com.lld.BookMyShow.exceptions.ShowNotFoundException;
+import com.lld.BookMyShow.exceptions.UserNotFoundException;
 import com.lld.BookMyShow.models.Booking;
 import com.lld.BookMyShow.services.BookingService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +23,7 @@ public class BookingController {
     }
 
     @PostMapping
-    public BookMovieResponseDto bookMovieTicket(@RequestBody BookMovieRequestDto req){
+    public BookMovieResponseDto bookMovieTicket(@RequestBody BookMovieRequestDto req) throws UserNotFoundException, ShowNotFoundException, SeatNotAvailableException {
         Booking booking = bookingService.bookMovieTicket(req.getUserId(), req.getShowId(), req.getSeatIds());
 
         BookMovieResponseDto bookMovieResponseDto = new BookMovieResponseDto();
